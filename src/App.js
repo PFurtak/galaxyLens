@@ -1,43 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
-import Search from './components/Search';
-import Card from './components/Card';
+import Navbar from './components/Navbar';
+import Home from './components/pages/Home';
+import About from './components/pages/About';
+import NotFound from './components/pages/NotFound';
 
 function App() {
-  const [search, setSearch] = useState('');
-  const [images, setImages] = useState([]);
-
-  useEffect(() => {
-    fetch(`https://images-api.nasa.gov/search?q=${search}&media_type=image`)
-      .then((res) => res.json())
-      .then((data) => {
-        setImages(data.collection.items);
-        console.log('data: ', data.collection.items);
-        console.log('images state: ', images);
-        console.log('search:', search);
-      })
-      .catch((err) => console.log(err));
-  }, [search]);
-
   return (
-    <div className='App'>
-      <div className='container'>
-        <h1>Galaxy Lens</h1>
-        <h2>Images from the Cosmos</h2>
-        <h3>Brought to you by NASA</h3>
-        <Search searchText={(search) => setSearch(search)} />
-
-        {search === '' ? (
-          <h1>Images not found</h1>
-        ) : (
-          <div>
-            {images.map((image) => (
-              <Card image={image} />
-            ))}
-          </div>
-        )}
+    <Router>
+      <div className='App'>
+        <Navbar />
+        <div className='container'>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/about' component={About} />
+            <Route component={NotFound} />
+          </Switch>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
