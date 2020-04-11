@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Search from './components/Search';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <h2>Images from the Cosmos</h2>
         <h3>Brought to you by NASA</h3>
       </header>
+      <Search />
     </div>
   );
 }
