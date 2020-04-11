@@ -1,11 +1,16 @@
 import React from 'react';
 
-const Card = () => {
+const Card = ({ image }) => {
   return (
     <div>
       <div className='container'>
         <div className='card text-center'>
-          <img src='' alt='' className='round-img' style={{ width: '60px' }} />
+          <img
+            src={image.links[0].href}
+            alt=''
+            className=''
+            style={{ width: '800' }}
+          />
           <h3>Title</h3>
           <div>
             <ul>

@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 
-const Search = () => {
-  const [text, setText] = useState('');
+const Search = ({ searchText }) => {
+  const [search, setSearch] = useState('');
 
   const onChange = (e) => {
-    setText(e.target.value);
+    setSearch(e.target.value);
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
+    searchText(search);
   };
 
   return (
@@ -16,16 +17,11 @@ const Search = () => {
       <form onSubmit={onSubmit} className='form'>
         <input
           type='text'
-          name='text'
+          name='search'
           placeholder='Search NASA for...'
-          value={text}
           onChange={onChange}
         />
-        <input
-          type='submit'
-          value='Search'
-          className='btn btn-dark btn-block'
-        />
+        <input type='submit' className='btn btn-dark btn-block' />
       </form>
     </div>
   );
