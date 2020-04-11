@@ -12,16 +12,22 @@ const Search = () => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <div>
+    <div>
+      <form onSubmit={onSubmit} className='form'>
         <input
-          onChange={onChange}
           type='text'
+          name='text'
           placeholder='Search NASA for...'
+          value={text}
+          onChange={onChange}
         />
-        <button type='submit'>Submit</button>
-      </div>
-    </form>
+        <input
+          type='submit'
+          value='Search'
+          className='btn btn-dark btn-block'
+        />
+      </form>
+    </div>
   );
 };
 
