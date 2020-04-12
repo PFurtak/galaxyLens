@@ -21,7 +21,7 @@ const Search = ({ searchText }) => {
           placeholder='Search NASA for...'
           onChange={onChange}
         />
-        <input type='submit' className='btn btn-dark btn-block' />
+        <input type='submit' className='btn btn-light btn-block' />
       </form>
     </div>
   );

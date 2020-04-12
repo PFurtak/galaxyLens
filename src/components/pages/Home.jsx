@@ -19,12 +19,14 @@ export const Home = () => {
   }, [search]);
   return (
     <Fragment>
-      <h1>Galaxy Lens</h1>
-      <h2>Images from the Cosmos</h2>
-      <h3>Brought to you by NASA</h3>
+      <div className='all-center'>
+        <h1>Galaxy Lens</h1>
+        <h2>Images from the Cosmos</h2>
+        <h3>Brought to you by NASA</h3>
+      </div>
       <Search searchText={(search) => setSearch(search)} />
       {search === '' ? (
-        <h1>Images not found</h1>
+        <h1 className='all-center'>Images not found</h1>
       ) : (
         <div>
           {images.map((image) => (

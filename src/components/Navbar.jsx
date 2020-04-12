@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <div>
-      <nav className='navbar bg-primary'>
+      <nav className='navbar bg-light'>
         <h1>
           <Link to='/'>
             <i class='fas fa-satellite-dish'></i> Galaxy Lens
