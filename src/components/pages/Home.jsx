@@ -12,9 +12,6 @@ export const Home = () => {
       .then((res) => res.json())
       .then((data) => {
         setImages(data.collection.items);
-        console.log('data: ', data.collection.items);
-        console.log('images state: ', images);
-        console.log('search:', search);
       })
       .catch((err) => console.log(err));
   }, [search]);
