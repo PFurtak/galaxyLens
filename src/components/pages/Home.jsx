@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Search from '../Search';
 import Card from '../Card';
+import Rocket from '../Rocket';
 
 export const Home = () => {
   const [search, setSearch] = useState('');
@@ -26,11 +27,11 @@ export const Home = () => {
       </div>
       <Search searchText={(search) => setSearch(search)} />
       {search === '' ? (
-        <h1 className='all-center'>Images not found</h1>
+        <Rocket />
       ) : (
         <div>
           {images.map((image) => (
-            <Card image={image} />
+            <Card key={image.data[0].nasa_id} image={image} />
           ))}
         </div>
       )}

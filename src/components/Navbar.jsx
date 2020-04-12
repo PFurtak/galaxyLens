@@ -7,7 +7,7 @@ const Navbar = () => {
       <nav className='navbar bg-light'>
         <h1>
           <Link to='/'>
-            <i class='fas fa-satellite-dish'></i> Galaxy Lens
+            <i className='fas fa-satellite-dish'></i> Galaxy Lens
           </Link>
         </h1>
         <ul>

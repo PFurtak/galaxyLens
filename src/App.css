@@ -19,7 +19,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: #282d33;
+  background-color: #000e15;
   color: white;
 }
 
@@ -74,6 +74,10 @@ img {
   color: var(--primary-color);
 }
 
+.text-light {
+  color: var(--light-color);
+}
+
 .text-dark {
   color: var(--dark-color);
 }
@@ -112,7 +116,7 @@ img {
 /* Cards */
 .card {
   padding: 1rem;
-  border: #fff 1px solid;
+  border: #61dbfb 1px solid;
   margin: 0.7rem 0;
 }
 
@@ -328,7 +332,7 @@ textarea {
   width: 100%;
   padding: 0.4rem;
   font-size: 1.2rem;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
 }
 
 input[type='submit'],

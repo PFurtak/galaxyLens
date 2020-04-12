@@ -11,11 +11,11 @@ const Card = ({ image }) => {
             className=''
             style={{ width: '800' }}
           />
-          <h3>{image.data[0].title}</h3>
+          <h3 className='text-light'>{image.data[0].title}</h3>
           <div>
             <ul>
-              <li>{image.data[0].date_created}</li>
-              <li>{image.data[0].description}</li>
+              <li className='text-light'>{image.data[0].date_created}</li>
+              <li className='text-light'>{image.data[0].description}</li>
             </ul>
           </div>
         </div>
