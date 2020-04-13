@@ -17,6 +17,11 @@ const Navbar = () => {
           <li>
             <a href='https://api.nasa.gov/'>API Documentation</a>
           </li>
+          <li>
+            <a href='https://www.github.com/pfurtak'>
+              <i className='fab fa-github'></i> GitHub
+            </a>
+          </li>
         </ul>
       </nav>
     </div>

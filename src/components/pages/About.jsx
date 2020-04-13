@@ -3,7 +3,9 @@ import React from 'react';
 export const About = () => {
   return (
     <div>
+      <br />
       <h1>About this Application</h1>
+      <br />
       <p>
         <strong>Search and pull images from NASA's image library.</strong>
       </p>
@@ -16,28 +18,44 @@ export const About = () => {
       <br />
       <p>
         <strong>
-          Source code can be viewed at https://github.com/PFurtak/galaxyLens
+          Source code can be reviewed at{' '}
+          <a
+            className='text-light'
+            href='https://github.com/PFurtak/galaxyLens'>
+            github.com/PFurtak/galaxyLens
+          </a>
         </strong>
       </p>
+
       <br />
       <hr />
       <br />
-      <h2>Credits:</h2>
+      <h2>Credits</h2>
       <br />
       <p>
         <h3>API</h3>Data is brought to you by the North American Space
         Association image library. More information on the API can be found at
-        https://api.nasa.gov/
+        <a className='text-light' href='https://api.nasa.gov/'>
+          {' '}
+          api.nasa.gov
+        </a>
       </p>
       <br />
       <p>
         <h3>CSS</h3>CSS library provided by Brad Traversy. You can find his work
-        at https://github.com/bradtraversy
+        at{' '}
+        <a className='text-light' href='https://github.com/bradtraversy'>
+          github.com/bradtraversy
+        </a>
       </p>
       <br />
       <p>
         <h3>GIFs</h3>GIFs were sourced from giphy.com and created by Tony Babel.
-        His work can be found at https://giphy.com/tonybabel
+        His work can be found at{' '}
+        <a className='text-light' href='https://giphy.com/tonybabel'>
+          {' '}
+          giphy.com/tonybabel
+        </a>
       </p>
     </div>
   );

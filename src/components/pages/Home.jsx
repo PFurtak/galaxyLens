@@ -15,6 +15,7 @@ export const Home = () => {
       })
       .catch((err) => console.log(err));
   }, [search]);
+
   return (
     <Fragment>
       <div className='all-center'>
