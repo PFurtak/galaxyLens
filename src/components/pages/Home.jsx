@@ -9,12 +9,15 @@ export const Home = () => {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch(`https://images-api.nasa.gov/search?q=${search}&media_type=image`)
-      .then((res) => res.json())
-      .then((data) => {
-        setImages(data.collection.items);
-      })
-      .catch((err) => console.log(err));
+    async function getData() {
+      const res = await fetch(
+        `https://images-api.nasa.gov/search?q=${search}&media_type=image`
+      );
+      const data = await res.json();
+      setImages(data.collection.items);
+    }
+    getData();
+    //eslint-disable-next-line
   }, [search]);
 
   return (
@@ -28,7 +31,7 @@ export const Home = () => {
       {search === '' ? (
         <Rocket />
       ) : (
-        <div>
+        <div className='container'>
           {images.map((image) => (
             <Card key={image.data[0].nasa_id} image={image} />
           ))}

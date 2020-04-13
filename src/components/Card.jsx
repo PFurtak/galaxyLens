@@ -15,7 +15,9 @@ const Card = ({ image }) => {
           <div>
             <ul>
               <li className='text-light'>{image.data[0].date_created}</li>
-              <li className='text-light'>{image.data[0].description}</li>
+              <li className='text-light container'>
+                {image.data[0].description}
+              </li>
             </ul>
           </div>
         </div>
