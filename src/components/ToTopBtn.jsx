@@ -1,55 +1,42 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-export default class ToTopBtn extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      is_visible: false,
-    };
-  }
+const ToTopBtn = () => {
+  const [visible, setVisible] = useState(false);
 
-  componentDidMount() {
-    let scrollComponent = this;
-    document.addEventListener('scroll', function (e) {
-      scrollComponent.toggleVisibility();
-    });
-  }
+  const scrollComponent = document.addEventListener('scroll', function (e) {
+    toggleVisibility(scrollComponent);
+  });
 
-  toggleVisibility() {
+  const toggleVisibility = () => {
     if (window.pageYOffset > 300) {
-      this.setState({
-        is_visible: true,
-      });
+      setVisible(true);
     } else {
-      this.setState({
-        is_visible: false,
-      });
+      setVisible(false);
     }
-  }
+  };
 
-  scrollToTop() {
+  const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
     });
-  }
+  };
 
-  render() {
-    const { is_visible } = this.state;
-    return (
-      <div className='scroll-to-top'>
-        {is_visible && (
-          <div onClick={() => this.scrollToTop()} style={topStyle}>
-            <i className='far fa-arrow-alt-circle-up text-light fa-2x'></i>
-          </div>
-        )}
-      </div>
-    );
-  }
-}
+  return (
+    <div className='scroll-to-top'>
+      {visible && (
+        <div onClick={scrollToTop} style={topStyle}>
+          <i className='far fa-arrow-alt-circle-up text-light fa-2x'></i>
+        </div>
+      )}
+    </div>
+  );
+};
 
 const topStyle = {
   position: 'fixed',
   bottom: '15px',
   right: '25px',
 };
+
+export default ToTopBtn;
