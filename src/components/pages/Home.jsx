@@ -2,6 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react';
 import Search from '../Search';
 import Card from '../Card';
 import Rocket from '../Rocket';
+import ToTopBtn from '../ToTopBtn';
 
 export const Home = () => {
   const [search, setSearch] = useState('');
@@ -31,6 +32,7 @@ export const Home = () => {
           {images.map((image) => (
             <Card key={image.data[0].nasa_id} image={image} />
           ))}
+          <ToTopBtn />
         </div>
       )}
     </Fragment>
