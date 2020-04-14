@@ -15,7 +15,7 @@ const Navbar = () => {
             <Link to='/about'>About</Link>
           </li>
           <li>
-            <a href='https://api.nasa.gov/'>API Documentation</a>
+            <a href='https://api.nasa.gov/'>API</a>
           </li>
           <li>
             <a href='https://www.github.com/pfurtak'>
